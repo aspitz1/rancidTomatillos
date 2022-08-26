@@ -8,7 +8,7 @@ class App extends Component {
   constructor() {
     super();
     this.state = {
-      isMovieView: true,
+      isMovieView: false,
       movies: movieData.movies,
       movie: {
         id: 539885,
