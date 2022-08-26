@@ -1,0 +1,11 @@
+.movies-container {
+        display: grid;
+        grid-template-columns: 300px 300px 300px 300px 300px 300px 300px 300px;
+        grid-gap: 10px;
+        background-color: #444;
+        border-radius: 5px;
+        padding: 20px;
+        font-size: 150%;
+        height: auto;
+        width: 95vw;
+}
