@@ -1,0 +1,14 @@
+.navbar {
+    background-color: #14181C;
+    padding: 0 0 20px 50px;
+}
+
+.navbar > h1 {
+    margin: 0;
+    padding: 20px 0 8px 0;
+    color: #fff;
+}
+
+.navbar-home {
+    cursor: pointer;
+}

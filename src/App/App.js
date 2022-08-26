@@ -1,4 +1,5 @@
 import React, { Component } from 'react';
+import Navbar from '../Navbar/Navbar';
 import Movie from '../Movie/Movie';
 import AllMovies from '../All-Movies/All-Movies';
 import movieData from '../movieData';
@@ -30,11 +31,20 @@ class App extends Component {
       }
     }
   }
-  
+
+  goHome = () => {
+    this.setState({ ...this.state, isMovieView: false });
+  }
+ 
   render() {
     return (
       <div className="App">
-      <AllMovies movies={this.state.movies}/>
+      
+        <Navbar 
+          view={this.state.isMovieView} 
+          goHome={ this.goHome }
+        />
+        <AllMovies movies={this.state.movies}/>
         {this.state.isMovieView && <Movie movieDetails={this.state.movie}/>}
       </div>
     );
