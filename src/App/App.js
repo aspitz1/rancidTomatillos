@@ -39,10 +39,10 @@ class App extends Component {
     console.log('click')
     this.setState({...this.state, isMovieView: true, movie:{...this.state.movie, id: id}});
  }
+ 
   render() {
     return (
       <div className="App">
-      
         <Navbar 
           view={this.state.isMovieView} 
           goHome={ this.goHome }
