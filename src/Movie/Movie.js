@@ -1,4 +1,3 @@
-import { getByTitle } from "@testing-library/react";
 import './Movie.css'
 
 const Movie = ({ movieDetails }) => {
