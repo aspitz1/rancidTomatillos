@@ -1,17 +1,14 @@
 import React from 'react'
-import Movie from '../Movie/Movie'
+import MovieCard from '../Movie-Card/Movie-Card'
 
-const AllMovies = (movies) => {
+const AllMovies = ({movies}) => {
     console.log(movies)
     const moviePosters = movies.map(movie => {
         return (
-            <Movie
+            <MovieCard
                 id={movie.id} 
                 title={movie.title}
-                releaseDate={movie.release_date}
-                rating={movie.average_rating}
                 poster={movie.poster_path}
-                backdrop={movie.backdrop_path}
             />
         )
     })
