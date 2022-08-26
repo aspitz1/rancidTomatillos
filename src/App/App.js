@@ -8,7 +8,7 @@ class App extends Component {
   constructor() {
     super();
     this.state = {
-      isMovieView: false,
+      isMovieView: true,
       movies: movieData.movies,
       movie: {
         id: 539885,
@@ -44,7 +44,7 @@ class App extends Component {
           view={this.state.isMovieView} 
           goHome={ this.goHome }
         />
-        <AllMovies movies={this.state.movies}/>
+        {/* <AllMovies movies={this.state.movies}/> */}
         {this.state.isMovieView && <Movie movieDetails={this.state.movie}/>}
       </div>
     );
