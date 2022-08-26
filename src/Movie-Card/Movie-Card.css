@@ -1,0 +1,6 @@
+.movie-card {
+    width: auto;
+    max-height: 100%;
+    object-fit: contain;
+    padding: 20px;
+}
