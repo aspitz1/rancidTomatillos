@@ -1,12 +1,15 @@
 import React, { Component } from 'react';
 import Navbar from '../Navbar/Navbar';
 import Movie from '../Movie/Movie';
+import AllMovies from '../All-Movies/All-Movies';
+import movieData from '../movieData';
 
 class App extends Component {
   constructor() {
     super();
     this.state = {
       isMovieView: false,
+      movies: movieData.movies,
       movie: {
         id: 539885,
         title: 'Ava',
@@ -32,14 +35,16 @@ class App extends Component {
   goHome = () => {
     this.setState({ ...this.state, isMovieView: false });
   }
-
+ 
   render() {
     return (
       <div className="App">
+      
         <Navbar 
           view={this.state.isMovieView} 
           goHome={ this.goHome }
         />
+        <AllMovies movies={this.state.movies}/>
         {this.state.isMovieView && <Movie movieDetails={this.state.movie}/>}
       </div>
     );
