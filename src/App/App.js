@@ -1,17 +1,20 @@
 import React, { Component } from 'react';
+import AllMovies from '../All-Movies/All-Movies';
+import movieData from '../movieData';
 
 class App extends Component {
   constructor() {
     super();
     this.state = {
-      
+    
     }
   }
 render() {
   return (
     <div className="App">
-      <h1>Hello World!</h1>
+      <AllMovies />
     </div>
+
   );
 }
 }
