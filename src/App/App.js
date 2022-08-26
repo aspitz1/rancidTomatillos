@@ -5,6 +5,7 @@ class App extends Component {
   constructor() {
     super();
     this.state = {
+      isMovieView: false,
       movie: {
         id: 539885,
         title: 'Ava',
@@ -30,7 +31,7 @@ class App extends Component {
   render() {
     return (
       <div className="App">
-        <Movie movieDetails={this.state.movie}/>
+        {this.state.isMovieView && <Movie movieDetails={this.state.movie}/>}
       </div>
     );
   }
