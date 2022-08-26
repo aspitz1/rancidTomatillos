@@ -35,16 +35,19 @@ class App extends Component {
   goHome = () => {
     this.setState({ ...this.state, isMovieView: false });
   }
+ viewMovie = (id) => {
+    console.log('click')
+    this.setState({...this.state, isMovieView: true, movie:{...this.state.movie, id: id}});
+ }
  
   render() {
     return (
       <div className="App">
-      
         <Navbar 
           view={this.state.isMovieView} 
           goHome={ this.goHome }
         />
-        {/* <AllMovies movies={this.state.movies}/> */}
+        {this.state.isMovieView || <AllMovies movies={this.state.movies} switchView={this.viewMovie}/>}
         {this.state.isMovieView && <Movie movieDetails={this.state.movie}/>}
       </div>
     );
