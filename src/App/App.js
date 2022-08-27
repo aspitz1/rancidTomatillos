@@ -44,7 +44,7 @@ class App extends Component {
         .then(response => response.json())
         .then(data => {
           this.setState({...this.state, isMovieView: true, movie: {
-            ...this.state.movie,
+            id: data.movie.id,
             title: data.movie.title,
             posterPath: data.movie['poster_path'],
             backdropPath: data.movie['backdrop_path'],
@@ -55,18 +55,29 @@ class App extends Component {
             revenue: data.movie.revenue,
             runtime: data.movie.runtime,
             tagline: data.movie.tagline,
-            averageRating: data.movie['average_rating']
+            averageRating: data.movie['average_rating'],
+            error: ''
           }})
+        })
+        .catch(err =>{
+          console.log(err)
+          this.setState({ ...this.state, movie: {...this.state.movie, error: 'Looks like something went wrong.'} })
         })
   }
  
   render() {
     return (
-      <div className="App">
+      <div className="App" 
+        style={{
+          width: '100vw',
+          height: '100vh'
+        }}
+      >
         <Navbar 
           view={this.state.isMovieView} 
           goHome={ this.goHome }
         />
+        {this.state.movie.error && <h3 style={{ color: 'red', textAlign: 'center' }}>{this.state.movie.error}</h3>}
         {this.state.isMovieView || <AllMovies movies={this.state.movies} switchView={this.viewMovie}/>}
         {this.state.isMovieView && <Movie movieDetails={this.state.movie}/>}
       </div>
