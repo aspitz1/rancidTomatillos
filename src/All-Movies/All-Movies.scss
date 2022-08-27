@@ -1,0 +1,17 @@
+@import '../styles.scss';
+
+.movies-container {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+    grid-gap: 10px;
+    background-color: $dark-grey;
+    padding: 20px 0 20px 0;
+    font-size: 150%;
+    height: auto;
+    width: 100vw;
+}
+
+.movies-container>img {
+    height: auto;
+    width: 80%;
+}
