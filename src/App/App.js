@@ -2,15 +2,15 @@ import React, { Component } from 'react';
 import Navbar from '../Navbar/Navbar';
 import Movie from '../Movie/Movie';
 import AllMovies from '../All-Movies/All-Movies';
-import movieData from '../movieData';
 import { getMovie } from '../api-calls/apiCalls'
+import { getAllMovies } from '../api-calls/apiCalls'
 
 class App extends Component {
   constructor() {
     super();
     this.state = {
       isMovieView: false,
-      movies: movieData.movies,
+      movies: [],
       movie: {
         id: '',
         title: '',
@@ -31,6 +31,12 @@ class App extends Component {
 
   goHome = () => {
     this.setState({ ...this.state, isMovieView: false });
+  }
+
+  componentDidMount() {
+    getAllMovies()
+      .then(response => response.json())
+      .then(data => this.setState({... this.state, movies: data.movies }))
   }
 
   viewMovie = (id) => {
