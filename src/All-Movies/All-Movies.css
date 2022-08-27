@@ -1,6 +1,6 @@
 .movies-container {
         display: grid;
-        grid-template-columns: 300px 300px 300px 300px 300px 300px 300px 300px;
+        grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
         grid-gap: 10px;
         background-color: #444;
         border-radius: 5px;
