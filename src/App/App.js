@@ -3,6 +3,7 @@ import Navbar from '../Navbar/Navbar';
 import Movie from '../Movie/Movie';
 import AllMovies from '../All-Movies/All-Movies';
 import movieData from '../movieData';
+import { getMovie } from '../api-calls/apiCalls'
 
 class App extends Component {
   constructor() {
@@ -11,23 +12,19 @@ class App extends Component {
       isMovieView: false,
       movies: movieData.movies,
       movie: {
-        id: 539885,
-        title: 'Ava',
-        posterPath: 'https://image.tmdb.org/t/p/original//qzA87Wf4jo1h8JMk9GilyIYvwsA.jpg',
-        backdropPath: 'https://image.tmdb.org/t/p/original//54yOImQgj8i85u9hxxnaIQBRUuo.jpg',
-        releaseDate: '2020-07-02',
-        overview: 'A black ops assassin is forced to fight for her own survival after a job goes dangerously wrong.',
-        genres: [
-          'Action',
-          'Crime',
-          'Drama',
-          'Thriller'
-        ],
-        budget: 0,
-        revenue: 152812,
-        runtime: 96,
-        tagline: 'Kill. Or be killed.',
-        averageRating: 5.875
+        id: '',
+        title: '',
+        posterPath: '',
+        backdropPath: '',
+        releaseDate: '',
+        overview: '',
+        genres: '',
+        budget: '',
+        revenue: '',
+        runtime: '',
+        tagline: '',
+        averageRating: '',
+        error: ''
       }
     }
   }
@@ -36,8 +33,24 @@ class App extends Component {
     this.setState({ ...this.state, isMovieView: false });
   }
  viewMovie = (id) => {
-    console.log('click')
-    this.setState({...this.state, isMovieView: true, movie:{...this.state.movie, id: id}});
+    getMovie(id)
+      .then(response => response.json())
+      .then(data => {
+        this.setState({...this.state, isMovieView: true, movie: {
+          ...this.state.movie,
+          title: data.movie.title,
+          posterPath: data.movie['poster_path'],
+          backdropPath: data.movie['backdrop_path'],
+          releaseDate: data.movie['release_date'],
+          overview: data.movie.overview,
+          genres: data.movie.genres,
+          budget: data.movie.budget,
+          revenue: data.movie.revenue,
+          runtime: data.movie.runtime,
+          tagline: data.movie.tagline,
+          averageRating: data.movie['average_rating']
+        }})
+      })
  }
  
   render() {
