@@ -32,26 +32,27 @@ class App extends Component {
   goHome = () => {
     this.setState({ ...this.state, isMovieView: false });
   }
- viewMovie = (id) => {
-    getMovie(id)
-      .then(response => response.json())
-      .then(data => {
-        this.setState({...this.state, isMovieView: true, movie: {
-          ...this.state.movie,
-          title: data.movie.title,
-          posterPath: data.movie['poster_path'],
-          backdropPath: data.movie['backdrop_path'],
-          releaseDate: data.movie['release_date'],
-          overview: data.movie.overview,
-          genres: data.movie.genres,
-          budget: data.movie.budget,
-          revenue: data.movie.revenue,
-          runtime: data.movie.runtime,
-          tagline: data.movie.tagline,
-          averageRating: data.movie['average_rating']
-        }})
-      })
- }
+
+  viewMovie = (id) => {
+      getMovie(id)
+        .then(response => response.json())
+        .then(data => {
+          this.setState({...this.state, isMovieView: true, movie: {
+            ...this.state.movie,
+            title: data.movie.title,
+            posterPath: data.movie['poster_path'],
+            backdropPath: data.movie['backdrop_path'],
+            releaseDate: data.movie['release_date'],
+            overview: data.movie.overview,
+            genres: data.movie.genres,
+            budget: data.movie.budget,
+            revenue: data.movie.revenue,
+            runtime: data.movie.runtime,
+            tagline: data.movie.tagline,
+            averageRating: data.movie['average_rating']
+          }})
+        })
+  }
  
   render() {
     return (
