@@ -29,6 +29,7 @@
 .movie-description-container {
     display: flex;
     margin: 10vh 0;
+    height: 50%;
     font-family: sans-serif;
     font-weight: lighter;
     background-color: #14181C;
@@ -43,9 +44,9 @@
 }
 
 .poster-movie-view {
-    width: 13vw;
-    aspect-ratio: auto;
-    margin: 1.5vw;
+    align-self: center;
+    max-height: 75%;
+    margin: 2vw;
     box-shadow: 0 0 20px #000;
     border-radius: 7px;
 }
