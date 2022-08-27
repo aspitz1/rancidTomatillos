@@ -56,7 +56,12 @@ class App extends Component {
  
   render() {
     return (
-      <div className="App">
+      <div className="App" 
+        style={{
+          width: '100vw',
+          height: '100vh'
+        }}
+      >
         <Navbar 
           view={this.state.isMovieView} 
           goHome={ this.goHome }

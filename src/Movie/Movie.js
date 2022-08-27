@@ -11,12 +11,15 @@ const Movie = ({ movieDetails }) => {
     return (
         <div className='movie-container'>
             <div className='movie-heading-container' 
-                style={{backgroundImage: `url(${backdropPath})`, 
-                backgroundSize: 'cover',
-                boxShadow: 'inset 40vw 10px 100px black'
-            }}>
+                style={{
+                    backgroundImage: `url(${backdropPath})`, 
+                    backgroundSize: '70%',
+                    backgroundRepeat: 'no-repeat',
+                    boxShadow: 'inset 43vw 10px 100px black',
+                    backgroundPosition: 'right 20%'
+                }}>
                 <h2>{title}</h2>
-                <ul className="movieHeadingDetails">
+                <ul className="movie-heading-details">
                     <li>Average Rating: {averageRating.toFixed(2)}</li>
                     <li>{genres.join(' | ')} Released: {releaseDateFormatted}</li>
                     <li>{runtime} Minutes</li>
@@ -27,7 +30,7 @@ const Movie = ({ movieDetails }) => {
             <div className="movie-description-container">
                 <div>
                     {tagline && <h3 className="tagline">{tagline}</h3>}
-                    <p>{overview}</p>
+                    <p className='description'>{overview}</p>
                 </div>
                 <img className='poster-movie-view' src={posterPath} />
             </div>
