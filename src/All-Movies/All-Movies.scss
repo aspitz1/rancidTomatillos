@@ -14,4 +14,8 @@
 .movies-container>img {
     height: auto;
     width: 80%;
+    &:hover {
+        cursor: pointer;
+        box-shadow: 0 0 20px #000;
+    }
 }

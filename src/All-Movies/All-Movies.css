@@ -13,5 +13,9 @@
   height: auto;
   width: 80%;
 }
+.movies-container > img:hover {
+  cursor: pointer;
+  box-shadow: 0 0 20px #000;
+}
 
 /*# sourceMappingURL=All-Movies.css.map */
