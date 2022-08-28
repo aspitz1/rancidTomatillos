@@ -68,6 +68,7 @@ class App extends Component {
  
   hoverMovie = (id) => {
     let info = this.state.movies.find((movie) => movie.id === id);
+    console.log(info);
     this.setState({...this.state, movie: {
       id: info.id, 
       title: info.title,
@@ -84,7 +85,7 @@ class App extends Component {
           goHome={ this.goHome }
         />
         {this.state.movie.error && <h3 style={{ color: 'red', textAlign: 'center' }}>{this.state.movie.error}</h3>}
-        {this.state.isMovieView || <AllMovies movies={this.state.movies} switchView={this.viewMovie} onHover={this.hoverMovie}/>}
+        {this.state.isMovieView || <AllMovies movies={this.state.movies} switchView={this.viewMovie}/>}
         {this.state.isMovieView && <Movie movieDetails={this.state.movie}/>}
       </div>
     );

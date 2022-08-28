@@ -1,16 +1,16 @@
 import React from 'react'
-
-const MovieCard = ({ movieDetails, switchView, onHover }) => {
+import './Movie-Card.css'
+const MovieCard = ({ movieDetails, switchView}) => {
     const {
         title, posterPath, id, releaseDate, overview,
         genres, budget, revenue, runtime, tagline, averageRating
     } = movieDetails;
-    return <article key={id} style={{ backgroundImage: `url(${posterPath})`}} id={id} name={title} alt={title} className='movie-card' onClick={() => switchView(id)} onMouseOver={() => onHover(id)}>
+    return <article  key={id} style={{ backgroundImage: `url(${posterPath})`}} id={id} name={title} alt={title} className='movie-card' onClick={() => switchView(id)}>
         <h3>{title}</h3>
         <ul>
-            <li>{releaseDate}</li>
-            <li>{averageRating}</li>
-            <li>{genres}</li>
+            <li className='release'>{releaseDate}</li>
+            <li className='rating'>{averageRating}</li>
+            <li className='genres'>{genres}</li>
         </ul>
     </article>
 }

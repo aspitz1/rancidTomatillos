@@ -1,0 +1,33 @@
+@import '../styles.scss';
+
+.movie-card {
+    display: flex;
+    flex-direction: column;
+    align-content: flex-start;
+    text-align:left;
+    height: auto;
+    width: 10vw;
+    
+    list-style: none;
+}
+
+.movie-card>h3 {
+font-size: 1.3em;
+    font-family: sans-serif;
+    color: $light-grey;
+    font-weight:bold;
+}
+
+.movie-card>ul {
+    list-style: none;
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    margin: 4px;
+}
+
+.movie-card>ul>li {
+    font-family: sans-serif;
+    color: $light-grey;
+    font-weight:lighter;
+}
