@@ -4,6 +4,7 @@ import Movie from '../Movie/Movie';
 import AllMovies from '../All-Movies/All-Movies';
 import { getMovie } from '../api-calls/apiCalls'
 import { getAllMovies } from '../api-calls/apiCalls'
+import './App.css';
 
 class App extends Component {
   constructor() {
@@ -67,12 +68,7 @@ class App extends Component {
  
   render() {
     return (
-      <div className="App" 
-        style={{
-          width: '100vw',
-          height: '100vh'
-        }}
-      >
+      <div className="App">
         <Navbar 
           view={this.state.isMovieView} 
           goHome={ this.goHome }
