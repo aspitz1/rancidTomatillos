@@ -19,6 +19,7 @@
   border: none;
   color: #fff;
   background-color: #00BD2E;
+  border-radius: 20px;
 }
 .navbar-home:hover {
   background-color: #019526;
