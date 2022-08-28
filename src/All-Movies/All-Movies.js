@@ -3,7 +3,6 @@ import MovieCard from '../Movie-Card/Movie-Card'
 import './All-Movies.css'
 
 const AllMovies = ({movies, switchView}) => {
-    console.log(movies)
     const moviePosters = movies.map(movie => {
         return (
             <MovieCard
