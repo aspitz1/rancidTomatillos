@@ -5,4 +5,12 @@
   background-color: #445566;
 }
 
+.error {
+  font-family: sans-serif;
+  font-size: larger;
+  font-weight: lighter;
+  color: red;
+  text-align: center;
+}
+
 /*# sourceMappingURL=App.css.map */

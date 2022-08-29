@@ -11,18 +11,33 @@
   color: #fff;
 }
 
-.navbar-home {
+.navbar-home,
+.search-by-title-submit {
   padding: 7px 15px;
   cursor: pointer;
-  font-size: 1.4em;
+  font-size: 1em;
   letter-spacing: 0.1em;
   border: none;
   color: #fff;
   background-color: #00BD2E;
   border-radius: 20px;
 }
-.navbar-home:hover {
+.navbar-home:disabled, .navbar-home:disabled:hover,
+.search-by-title-submit:disabled,
+.search-by-title-submit:disabled:hover {
+  cursor: not-allowed;
+  background-color: #445566;
+}
+.navbar-home:hover,
+.search-by-title-submit:hover {
   background-color: #019526;
+}
+
+.search-by-title-input {
+  margin-right: 20px;
+  padding: 7px 15px;
+  border-radius: 20px;
+  border: none;
 }
 
 /*# sourceMappingURL=Navbar.css.map */

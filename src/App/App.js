@@ -25,9 +25,9 @@ class App extends Component {
         revenue: '',
         runtime: '',
         tagline: '',
-        averageRating: '',
-        error: ''
-      }
+        averageRating: ''
+      },
+      error: ''
     }
   }
 
@@ -41,15 +41,30 @@ class App extends Component {
       .then(data => this.setState({... this.state, movies: data.movies }))
   }
 
-  findMovie = (id) => {
-    return this.state.fetchedMovies.find(movie => movie.id === id)
+  findMovieById = (id) => {
+    return this.state.fetchedMovies.find(movie => movie.id === id);
+  }
+
+  makeUpperCase = (string) => string.split(' ').map(word => word[0].toUpperCase() + word.substring(1).toLowerCase()).join(' ');
+
+  findMovieByTitle = (title) => {
+    const formattedTitle = this.makeUpperCase(title);
+    const movie = this.state.movies.find(movie => movie.title === formattedTitle);
+    if (movie) {
+      this.viewMovie(movie.id);
+      return
+    }
+
+    this.setState({ ...this.state, error: 'Looks like we where unable to find that title.' });
   }
 
   viewMovie = (id) => {
-    const movie = this.findMovie(id);
+    const movie = this.findMovieById(id);
     if(movie) {
-      this.setState({...this.state, 
+      this.setState({
+            ...this.state, 
             isMovieView: true,
+            error: '',
             movie: {
             id: movie.id,
             title: movie.title,
@@ -62,10 +77,9 @@ class App extends Component {
             revenue: movie.revenue,
             runtime: movie.runtime,
             tagline: movie.tagline,
-            averageRating: movie['average_rating'],
-            error: ''
+            averageRating: movie['average_rating']
           }})
-
+          
           return;
     }
 
@@ -75,6 +89,7 @@ class App extends Component {
         this.setState({...this.state, 
           isMovieView: true,
           fetchedMovies: [...this.state.fetchedMovies, data.movie],
+          error: '',
           movie: {
           id: data.movie.id,
           title: data.movie.title,
@@ -87,13 +102,12 @@ class App extends Component {
           revenue: data.movie.revenue,
           runtime: data.movie.runtime,
           tagline: data.movie.tagline,
-          averageRating: data.movie['average_rating'],
-          error: ''
+          averageRating: data.movie['average_rating']
         }})
       })
       .catch(err =>{
         console.log(err)
-        this.setState({ ...this.state, movie: {...this.state.movie, error: 'Looks like something went wrong.'} })
+        this.setState({ ...this.state, error: 'Looks like something went wrong.' })
       })
   }
  
@@ -103,8 +117,9 @@ class App extends Component {
         <Navbar 
           view={this.state.isMovieView} 
           goHome={ this.goHome }
+          findMovieByTitle={this.findMovieByTitle}
         />
-        {this.state.movie.error && <h3 style={{ color: 'red', textAlign: 'center' }}>{this.state.movie.error}</h3>}
+        {this.state.error && <h3 className='error'>{this.state.error}</h3>}
         {this.state.isMovieView || <AllMovies movies={this.state.movies} switchView={this.viewMovie}/>}
         {this.state.isMovieView && <Movie movieDetails={this.state.movie}/>}
       </div>

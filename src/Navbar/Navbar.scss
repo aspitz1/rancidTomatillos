@@ -13,16 +13,30 @@
         }
 }
 
-.navbar-home {
+.navbar-home,
+.search-by-title-submit {
     padding: 7px 15px;
     cursor: pointer;
-    font-size: 1.4em;
+    font-size: 1em;
     letter-spacing: .1em;
     border: none;
     color: #fff;
-    background-color: #00BD2E;
+    background-color: $green;
     border-radius: 20px;
+    &:disabled,
+    &:disabled:hover {
+        cursor: not-allowed;
+        background-color: $dark-grey;
+    }
     &:hover {
         background-color: #019526;
     }
 }
+
+.search-by-title-input {
+    margin-right: 20px;
+    padding: 7px 15px;
+    border-radius: 20px;
+    border: none;
+}
+
