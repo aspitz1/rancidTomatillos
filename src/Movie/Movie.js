@@ -15,17 +15,19 @@ const Movie = ({ movieDetails }) => {
                     backgroundImage: `url(${backdropPath})`, 
                     backgroundSize: '70%',
                     backgroundRepeat: 'no-repeat',
-                    boxShadow: 'inset 43vw 10px 100px black',
+                    boxShadow: 'inset 30vw -20px 40px black',
                     backgroundPosition: 'right 20%'
                 }}>
-                <h2>{title}</h2>
-                <ul className="movie-heading-details">
-                    <li>Average Rating: {averageRating.toFixed(2)}</li>
-                    <li>{genres.join(' | ')} Released: {releaseDateFormatted}</li>
-                    <li>{runtime} Minutes</li>
-                    <li>Budget: ${budget.toLocaleString('en-US')}</li>
-                    <li>Revenue: ${revenue.toLocaleString('en-US')}</li>
-                </ul>
+                <div className='movie-heading-description-container'>
+                    <h2>{title}</h2>
+                    <ul className="movie-heading-details">
+                        <li>Average Rating: {averageRating.toFixed(2)}</li>
+                        <li><span className='no-wrap'>{genres.join(' | ')}</span> <span className='no-wrap'>Released: {releaseDateFormatted}</span></li>
+                        <li><span className='no-wrap'>{runtime} Minutes</span></li>
+                        <li><span className='no-wrap'>Budget: ${budget.toLocaleString('en-US')}</span></li>
+                        <li><span className='no-wrap'>Revenue: ${revenue.toLocaleString('en-US')}</span></li>
+                    </ul>
+                </div>
             </div>
             <div className="movie-description-container">
                 <div>

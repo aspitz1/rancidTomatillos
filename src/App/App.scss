@@ -1,6 +1,8 @@
+@import '../styles.scss';
+
 .App {
     margin: 0;
     padding: 0;
     width: 100vw;
-    background-color: #000;
+    background-color: $dark-grey;
 }

@@ -12,6 +12,7 @@ class App extends Component {
     this.state = {
       isMovieView: false,
       movies: [],
+      fetchedMovies: [],
       movie: {
         id: '',
         title: '',
@@ -40,30 +41,60 @@ class App extends Component {
       .then(data => this.setState({... this.state, movies: data.movies }))
   }
 
+  findMovie = (id) => {
+    return this.state.fetchedMovies.find(movie => movie.id === id)
+  }
+
   viewMovie = (id) => {
-      getMovie(id)
-        .then(response => response.json())
-        .then(data => {
-          this.setState({...this.state, isMovieView: true, movie: {
-            id: data.movie.id,
-            title: data.movie.title,
-            posterPath: data.movie['poster_path'],
-            backdropPath: data.movie['backdrop_path'],
-            releaseDate: data.movie['release_date'],
-            overview: data.movie.overview,
-            genres: data.movie.genres,
-            budget: data.movie.budget,
-            revenue: data.movie.revenue,
-            runtime: data.movie.runtime,
-            tagline: data.movie.tagline,
-            averageRating: data.movie['average_rating'],
+    const movie = this.findMovie(id);
+    if(movie) {
+      this.setState({...this.state, 
+            isMovieView: true,
+            movie: {
+            id: movie.id,
+            title: movie.title,
+            posterPath: movie['poster_path'],
+            backdropPath: movie['backdrop_path'],
+            releaseDate: movie['release_date'],
+            overview: movie.overview,
+            genres: movie.genres,
+            budget: movie.budget,
+            revenue: movie.revenue,
+            runtime: movie.runtime,
+            tagline: movie.tagline,
+            averageRating: movie['average_rating'],
             error: ''
           }})
-        })
-        .catch(err =>{
-          console.log(err)
-          this.setState({ ...this.state, movie: {...this.state.movie, error: 'Looks like something went wrong.'} })
-        })
+
+          return;
+    }
+
+    getMovie(id)
+      .then(response => response.json())
+      .then(data => {
+        this.setState({...this.state, 
+          isMovieView: true,
+          fetchedMovies: [...this.state.fetchedMovies, data.movie],
+          movie: {
+          id: data.movie.id,
+          title: data.movie.title,
+          posterPath: data.movie['poster_path'],
+          backdropPath: data.movie['backdrop_path'],
+          releaseDate: data.movie['release_date'],
+          overview: data.movie.overview,
+          genres: data.movie.genres,
+          budget: data.movie.budget,
+          revenue: data.movie.revenue,
+          runtime: data.movie.runtime,
+          tagline: data.movie.tagline,
+          averageRating: data.movie['average_rating'],
+          error: ''
+        }})
+      })
+      .catch(err =>{
+        console.log(err)
+        this.setState({ ...this.state, movie: {...this.state.movie, error: 'Looks like something went wrong.'} })
+      })
   }
  
   render() {
