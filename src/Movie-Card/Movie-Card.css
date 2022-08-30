@@ -67,6 +67,9 @@
   font: bold;
   color: #00BD2E;
   position: relative;
+  &:hover {
+        cursor: pointer;
+    }
 }
 
 .hidden > label {
