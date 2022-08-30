@@ -21,7 +21,7 @@ const Movie = ({ movieDetails }) => {
                 <div className='movie-heading-description-container'>
                     <h2>{title}</h2>
                     <ul className="movie-heading-details">
-                        <li>Average Rating: {averageRating.toFixed(2)}</li>
+                        <li>Average Rating: {averageRating.toFixed(2)}/10</li>
                         <li><span className='no-wrap'>{genres.join(' | ')}</span> <span className='no-wrap'>Released: {releaseDateFormatted}</span></li>
                         <li><span className='no-wrap'>{runtime} Minutes</span></li>
                         <li><span className='no-wrap'>Budget: ${budget.toLocaleString('en-US')}</span></li>

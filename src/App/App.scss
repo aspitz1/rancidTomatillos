@@ -6,3 +6,11 @@
     width: 100vw;
     background-color: $dark-grey;
 }
+
+.error {
+    font-family: sans-serif;
+    font-size: larger;
+    font-weight: lighter;
+    color: red;
+    text-align: center;
+}
