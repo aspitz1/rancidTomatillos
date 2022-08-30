@@ -9,14 +9,14 @@ const MovieCard = ({ movieDetails, switchView}) => {
     const avgRating = average_rating.toFixed(1)
     const backgroundImage = poster_path;
     return <article key={id} id={id} name={title} alt={title} className='movie-card' onClick={() => switchView(id)} 
-    style={{backgroundImage: `url(${backgroundImage})`,backgroundRepeat: 'no-repeat', backgroundSize: 'contain'}}>
+    style={{height: '300px', width: '200px', backgroundImage: `url(${backgroundImage})`,backgroundRepeat: 'no-repeat',backgroundSize: 'contain',}}>
                 <div className='hidden'>
 
                     <h3>{title}</h3>
-                    <label for='release'>Released:
+                    <label>Released:
                         <p className='text' id='release'>{releaseDate}</p>
                     </label>
-                    <label for='rating'>Rating:
+                    <label>Rating:
                         <p className ='text' id='rating'>{avgRating}/10</p>
                     </label>
                 </div>
