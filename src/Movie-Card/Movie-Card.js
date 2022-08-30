@@ -11,7 +11,6 @@ const MovieCard = ({ movieDetails, switchView}) => {
     return <article key={id} id={id} name={title} alt={title} className='movie-card' onClick={() => switchView(id)} 
     style={{height: '300px', width: '200px', backgroundImage: `url(${backgroundImage})`,backgroundRepeat: 'no-repeat',backgroundSize: 'contain',}}>
                 <div className='hidden'>
-
                     <h3>{title}</h3>
                     <label>Released:
                         <p className='text' id='release'>{releaseDate}</p>
@@ -19,8 +18,7 @@ const MovieCard = ({ movieDetails, switchView}) => {
                     <label>Rating:
                         <p className ='text' id='rating'>{avgRating}/10</p>
                     </label>
-                </div>
-
+                    </div>
             </article>
 }
 export default MovieCard;

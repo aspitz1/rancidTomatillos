@@ -16,7 +16,8 @@
     border-radius: 5px;
     &:hover {
         cursor: pointer;
-        height: calc(90% + 20px);
+        height: calc(100% + 20px);
+        width: calc(100% + 14px);
         margin: 10px;
         box-shadow: 0 0 20px #000;
 
@@ -25,13 +26,23 @@
             opacity: 1;
             margin-left: 10px;
         }
-
+        .scrim {
+            cursor: pointer;
+            opacity: 0.8;
+        }
         .background-image {
             cursor: pointer;
             opacity: 0.2;
         }
 
     }
+
+.screen {
+        position: absolute;
+        opacity: 0.4;
+        height: 300px;
+        width: 200px;
+        background-color: $off-black;
 }
 
 .background {
@@ -85,4 +96,5 @@
     &:hover {
         cursor: pointer;
     }
+}
 }
