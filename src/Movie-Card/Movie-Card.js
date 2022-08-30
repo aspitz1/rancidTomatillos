@@ -7,9 +7,9 @@ const MovieCard = ({ movieDetails, switchView}) => {
 
     const releaseDate = new Date(release_date).toLocaleDateString('en-US')
     const avgRating = average_rating.toFixed(1)
-    return <article  key={id} id={id} name={title} alt={title} className='movie-card' onClick={() => switchView(id)}>
-                <img className='background' src={poster_path} alt={title} height='300' width='200'></img>
-
+    const backgroundImage = poster_path;
+    return <article key={id} id={id} name={title} alt={title} className='movie-card' onClick={() => switchView(id)} 
+    style={{backgroundImage: `url(${backgroundImage})`,backgroundRepeat: 'no-repeat', backgroundSize: 'contain'}}>
                 <div className='hidden'>
 
                     <h3>{title}</h3>
