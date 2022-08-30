@@ -111,6 +111,17 @@ class App extends Component {
       })
   }
  
+  hoverMovie = (id) => {
+    let info = this.state.movies.find((movie) => movie.id === id);
+    console.log(info);
+    this.setState({...this.state, movie: {
+      id: info.id, 
+      title: info.title,
+      releaseDate: info.release_date,
+      averageRating: info.average_rating
+    }})
+
+  }
   render() {
     return (
       <div className="App">
