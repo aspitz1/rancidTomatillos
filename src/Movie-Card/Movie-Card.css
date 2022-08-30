@@ -43,20 +43,10 @@
 }
 
 .hidden {
-  display: flex;
-  flex-direction: column;
-  display: flex;
-  flex-direction: column;
-  align-content: flex-start;
-  text-align: left;
-  text-overflow: clip;
-  overflow: hidden;
-  position: relative;
-  justify-content: flex-start;
-  overflow-y: scroll;
-  flex-wrap: wrap;
-  overflow-wrap: break-word;
-  opacity: 0;
+    align-self: flex-start;
+    opacity: 0; 
+    padding: 0;
+    margin: 0;
 }
 
 .hidden > h3 {
