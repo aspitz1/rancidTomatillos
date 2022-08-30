@@ -72,6 +72,9 @@ width: 100%;
 .text {
   color: whitesmoke;
   position: relative;
+  &:hover {
+        cursor: pointer;
+    }
 }
 
 /*# sourceMappingURL=Movie-Card.css.map */
