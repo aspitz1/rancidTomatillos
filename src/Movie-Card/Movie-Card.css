@@ -37,7 +37,10 @@
   opacity: 1;
   height: 90%;
   width: auto;
-  position: absolute;
+    position: absolute;
+    padding: 0;
+    margin: 0; 
+    border-radius: 5px;
 }
 
 .hidden {
