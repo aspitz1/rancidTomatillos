@@ -2,7 +2,7 @@ import React from 'react'
 import MovieCard from '../Movie-Card/Movie-Card'
 import './All-Movies.css'
 
-const AllMovies = ({movies, switchView}) => {
+const AllMovies = ({movies}) => {
     const moviePosters = movies.map(movie => {
         return (
             <MovieCard
@@ -10,7 +10,6 @@ const AllMovies = ({movies, switchView}) => {
                 id={movie.id} 
                 title={movie.title}
                 poster={movie.poster_path}
-                switchView={switchView} 
             />
         )
     })

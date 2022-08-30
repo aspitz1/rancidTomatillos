@@ -15,6 +15,7 @@
 .search-by-title-submit {
   padding: 7px 15px;
   cursor: pointer;
+  font-family: sans-serif;
   font-size: 1em;
   letter-spacing: 0.1em;
   border: none;
@@ -22,6 +23,11 @@
   background-color: #00BD2E;
   border-radius: 20px;
 }
+
+.navbar-home {
+  text-decoration: none;
+}
+
 .navbar-home:disabled, .navbar-home:disabled:hover,
 .search-by-title-submit:disabled,
 .search-by-title-submit:disabled:hover {
