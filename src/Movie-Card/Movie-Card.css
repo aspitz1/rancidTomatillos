@@ -1,30 +1,33 @@
 .movie-card {
   height: 90%;
-  width: auto;
+  display: flex;
+   flex-direction: column;
+   justify-content: flex-start;
+   align-items: center;
+width: 100%;
+
   padding: 0;
   margin: 20px;
-  border-radius: 5px;
-  position: relative;
-  padding-left: 10px;
-  align-content: center;
+ 
+  
+ 
   font-size: 0.8em;
   font-family: sans-serif;
   color: whitesmoke;
-  font-kerning: normal;
-  text-shadow: 0ch;
-  outline-color: black;
+ 
 }
 .movie-card:hover {
   cursor: pointer;
+  height: calc(90% + 20px);
+  margin: 10px;
 }
 .movie-card:hover .hidden {
+  cursor: pointer;
   opacity: 1;
   margin-left: 10px;
 }
 .movie-card:hover .background {
   opacity: 0.2;
-  height: calc(90% + 20px);
-  margin: 10px;
   box-shadow: 0 0 20px #000;
 }
 
@@ -32,24 +35,17 @@
   opacity: 1;
   height: 90%;
   width: auto;
-  position: absolute;
+    position: absolute;
+    padding: 0;
+    margin: 0; 
+    border-radius: 5px;
 }
 
 .hidden {
-  display: flex;
-  flex-direction: column;
-  display: flex;
-  flex-direction: column;
-  align-content: flex-start;
-  text-align: left;
-  text-overflow: clip;
-  overflow: hidden;
-  position: relative;
-  justify-content: flex-start;
-  overflow-y: scroll;
-  flex-wrap: wrap;
-  overflow-wrap: break-word;
-  opacity: 0;
+    align-self: flex-start;
+    opacity: 0; 
+    padding: 0;
+    margin: 0;
 }
 
 .hidden > h3 {
@@ -60,16 +56,25 @@
   font: bold;
   color: #00BD2E;
   position: relative;
+  &:hover {
+        cursor: pointer;
+    }
 }
 
 .hidden > label {
   font-weight: lighter;
   color: #99AABB;
+  &:hover {
+        cursor: pointer;
+    }
 }
 
 .text {
   color: whitesmoke;
   position: relative;
+  &:hover {
+        cursor: pointer;
+    }
 }
 
 /*# sourceMappingURL=Movie-Card.css.map */
