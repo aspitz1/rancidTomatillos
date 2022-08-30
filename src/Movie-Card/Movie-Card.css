@@ -64,6 +64,9 @@ width: 100%;
 .hidden > label {
   font-weight: lighter;
   color: #99AABB;
+  &:hover {
+        cursor: pointer;
+    }
 }
 
 .text {
