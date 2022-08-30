@@ -19,6 +19,8 @@
 }
 .movie-card:hover {
   cursor: pointer;
+  height: calc(90% + 20px);
+  margin: 10px;
 }
 .movie-card:hover .hidden {
   opacity: 1;
