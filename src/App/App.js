@@ -34,6 +34,17 @@ class App extends Component {
     this.setState({ ...this.state, error: 'Looks like we where unable to find that title.' });
   }
  
+  hoverMovie = (id) => {
+    let info = this.state.movies.find((movie) => movie.id === id);
+    console.log(info);
+    this.setState({...this.state, movie: {
+      id: info.id, 
+      title: info.title,
+      releaseDate: info.release_date,
+      averageRating: info.average_rating
+    }})
+
+  }
   render() {
     return (
       <div className="App">

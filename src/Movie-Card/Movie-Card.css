@@ -1,0 +1,80 @@
+.movie-card {
+  height: 90%;
+  display: flex;
+   flex-direction: column;
+   justify-content: flex-start;
+   align-items: center;
+width: 100%;
+
+  padding: 0;
+  margin: 20px;
+ 
+  
+ 
+  font-size: 0.8em;
+  font-family: sans-serif;
+  color: whitesmoke;
+ 
+}
+.movie-card:hover {
+  cursor: pointer;
+  height: calc(90% + 20px);
+  margin: 10px;
+}
+.movie-card:hover .hidden {
+  cursor: pointer;
+  opacity: 1;
+  margin-left: 10px;
+}
+.movie-card:hover .background {
+  opacity: 0.2;
+  box-shadow: 0 0 20px #000;
+}
+
+.background {
+  opacity: 1;
+  height: 90%;
+  width: auto;
+    position: absolute;
+    padding: 0;
+    margin: 0; 
+    border-radius: 5px;
+}
+
+.hidden {
+    align-self: flex-start;
+    opacity: 0; 
+    padding: 0;
+    margin: 0;
+}
+
+.hidden > h3 {
+  align-self: center;
+  font-size: 1.2em;
+  font-style: sans-serif;
+  text-transform: uppercase;
+  font: bold;
+  color: #00BD2E;
+  position: relative;
+  &:hover {
+        cursor: pointer;
+    }
+}
+
+.hidden > label {
+  font-weight: lighter;
+  color: #99AABB;
+  &:hover {
+        cursor: pointer;
+    }
+}
+
+.text {
+  color: whitesmoke;
+  position: relative;
+  &:hover {
+        cursor: pointer;
+    }
+}
+
+/*# sourceMappingURL=Movie-Card.css.map */
