@@ -4,12 +4,13 @@ import { NavLink } from 'react-router-dom';
 
 const Navbar = ({ findMovieByTitle }) => {
     return (
-        <nav className='navbar'>
+        <nav className='navbar' style={{ display: 'flex', flexDirection: 'row', alignItems: 'baseline', justifyContent: 'space-between'}}>
             <h1>Rancid Tomatillos</h1>
             <NavLink exact to='/'  
             className='navbar-home'
-            activeStyle = {{ opacity: '0' }}>Home</NavLink>
+            activeStyle={{ opacity: '0', marginLeft: '20px'}}>Home</NavLink>
             <SearchByNameForm findMovieByTitle={findMovieByTitle} />
+           
         </nav>
     )
 }
