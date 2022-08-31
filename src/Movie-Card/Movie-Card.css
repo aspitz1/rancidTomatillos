@@ -1,80 +1,77 @@
 .movie-card {
-  height: 90%;
   display: flex;
-   flex-direction: column;
-   justify-content: flex-start;
-   align-items: center;
-width: 100%;
-
-  padding: 0;
-  margin: 20px;
- 
-  
- 
+  flex-direction: column;
+  justify-content: flex-start;
+  align-items: center;
+  position: relative;
+  align-content: center;
   font-size: 0.8em;
   font-family: sans-serif;
   color: whitesmoke;
- 
+  outline-color: black;
+  border-radius: 5px;
+  height: 300px;
+  width: 189px;
+  transition: all 0.2s ease-in-out;
 }
 .movie-card:hover {
   cursor: pointer;
-  height: calc(90% + 20px);
-  margin: 10px;
-}
-.movie-card:hover .hidden {
-  cursor: pointer;
-  opacity: 1;
-  margin-left: 10px;
-}
-.movie-card:hover .background {
-  opacity: 0.2;
+  z-index: 1;
+  transform: scale(1.25);
   box-shadow: 0 0 20px #000;
 }
-
-.background {
+.movie-card:hover .screen {
+  cursor: pointer;
   opacity: 1;
-  height: 90%;
-  width: auto;
-    position: absolute;
-    padding: 0;
-    margin: 0; 
-    border-radius: 5px;
+  opacity: 1;
 }
-
-.hidden {
-    align-self: flex-start;
-    opacity: 0; 
-    padding: 0;
-    margin: 0;
+.movie-card:hover .scrim {
+  cursor: pointer;
+  opacity: 0.8;
 }
-
-.hidden > h3 {
+.movie-card:hover .background-image {
+  cursor: pointer;
+  opacity: 0.2;
+}
+.movie-card .screen {
+  position: relative;
+  opacity: 0;
+  height: 100%;
+  width: 100%;
+  background-color: #14181C;
+  border-radius: 5px;
+}
+.movie-card .screen:hover {
+  opacity: 0.9;
+}
+.movie-card .screen > h3 {
   align-self: center;
-  font-size: 1.2em;
+  font-size: 1em;
   font-style: sans-serif;
   text-transform: uppercase;
+  padding-left: 10px;
   font: bold;
   color: #00BD2E;
   position: relative;
-  &:hover {
-        cursor: pointer;
-    }
 }
-
-.hidden > label {
+.movie-card .screen > h3:hover {
+  cursor: pointer;
+}
+.movie-card .screen > label {
   font-weight: lighter;
   color: #99AABB;
-  &:hover {
-        cursor: pointer;
-    }
+  padding-left: 10px;
 }
-
-.text {
+.movie-card .screen > label:hover {
+  cursor: pointer;
+}
+.movie-card .text {
   color: whitesmoke;
   position: relative;
-  &:hover {
-        cursor: pointer;
-    }
+  padding-left: 10px;
+}
+.movie-card .text:hover {
+  cursor: pointer;
 }
 
 /*# sourceMappingURL=Movie-Card.css.map */

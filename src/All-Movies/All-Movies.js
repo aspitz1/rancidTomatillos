@@ -4,7 +4,6 @@ import './All-Movies.css'
 
 
 const AllMovies = ({movies}) => {
-    console.log(movies);
     const moviePosters = movies.map(movie => {
         return (
             <MovieCard
