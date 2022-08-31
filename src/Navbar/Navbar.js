@@ -6,7 +6,9 @@ const Navbar = ({ findMovieByTitle }) => {
     return (
         <nav className='navbar'>
             <h1>Rancid Tomatillos</h1>
-            <NavLink to='/' className='navbar-home'>Home</NavLink>
+            <NavLink exact to='/'  
+            className='navbar-home'
+            activeStyle = {{ opacity: '0' }}>Home</NavLink>
             <SearchByNameForm findMovieByTitle={findMovieByTitle} />
         </nav>
     )
