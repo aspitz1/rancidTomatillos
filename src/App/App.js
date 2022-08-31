@@ -26,12 +26,8 @@ class App extends Component {
   findMovieByTitle = (title) => {
     const formattedTitle = this.makeUpperCase(title);
     const movie = this.state.movies.find(movie => movie.title === formattedTitle);
-    if (movie) {
-      this.viewMovie(movie.id);
-      return
-    }
-
-    this.setState({ ...this.state, error: 'Looks like we where unable to find that title.' });
+    console.log(movie.id)
+    return movie.id
   }
  
   render() {

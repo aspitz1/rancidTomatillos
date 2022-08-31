@@ -1,11 +1,14 @@
 import React, { Component } from 'react';
 import '../Navbar/Navbar.css';
+import { Link } from 'react-router-dom'
+import { Swtich } from 'react-router-dom'
 
 class SearchByNameForm extends Component {
     constructor() {
         super();
         this.state = {
-            movieTitle: ''
+            movieTitle: '',
+            id: ''
         }
     }
     
@@ -19,8 +22,9 @@ class SearchByNameForm extends Component {
 
     handelSubmit = event => {
         event.preventDefault();
-        this.props.findMovieByTitle(this.state.movieTitle);
-        this.resetMovieTitle();
+        const id = this.props.findMovieByTitle(this.state.movieTitle);
+        console.log(id)
+        this.setState({id: id, movieTitle: ''})
     }
 
     render() {
@@ -34,13 +38,16 @@ class SearchByNameForm extends Component {
                     placeholder='Movie Name' 
                     onChange={(event) => this.handelMovieTitle(event)}
                 />
-                <input 
-                    className='search-by-title-submit'
-                    type='submit'
-                    value='SEARCH'
-                    disabled={!this.state.movieTitle.length}
-                    onClick={(event => this.handelSubmit(event))}
-                />
+                <Link to={'/' + this.state.id} >
+                    <input 
+                        className='search-by-title-submit'
+                        type='submit'
+                        value='SEARCH'
+                        disabled={!this.state.movieTitle.length}
+                        onClick={(event => this.handelSubmit(event))}
+                    />
+                </Link>
+
             </form>
         )
     }

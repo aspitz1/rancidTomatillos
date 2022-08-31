@@ -4,7 +4,7 @@ import { NavLink } from 'react-router-dom';
 
 const Navbar = ({ findMovieByTitle }) => {
     return (
-        <nav className='navbar' style={{ display: 'flex', flexDirection: 'row', alignItems: 'baseline', justifyContent: 'space-between'}}>
+        <nav className='navbar' style={{ display: 'flex', flexDirection: 'row', alignItems: 'baseline', justifyContent: 'space-between', paddingRignt: '20px'}}>
             <h1>Rancid Tomatillos</h1>
             <NavLink exact to='/'  
             className='navbar-home'
