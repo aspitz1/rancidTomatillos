@@ -4,14 +4,15 @@ import Movie from '../Movie/Movie';
 import AllMovies from '../All-Movies/All-Movies';
 import { getAllMovies } from '../api-calls/apiCalls'
 import './App.css';
-import { Route } from 'react-router-dom';
+import { Route, Redirect} from 'react-router-dom';
 
 class App extends Component {
   constructor() {
     super();
     this.state = {
       movies: [],
-      error: ''
+      error: '',
+      selectedMovie: ''
     }
   }
 
@@ -26,8 +27,8 @@ class App extends Component {
   findMovieByTitle = (title) => {
     const formattedTitle = this.makeUpperCase(title);
     const movie = this.state.movies.find(movie => movie.title === formattedTitle);
-    console.log(movie.id)
-    return movie.id
+    this.setState({selectedMovie: movie.id})
+    return movie
   }
  
   hoverMovie = (id) => {
@@ -47,10 +48,12 @@ class App extends Component {
         <Navbar 
           view={this.state.isMovieView} 
           findMovieByTitle={this.findMovieByTitle}
+          id={this.state.selectedMovie}
         />
         {this.state.error && <h3 className='error'>{this.state.error}</h3>}
           <Route exact path='/' render={() => <AllMovies movies={this.state.movies}/>}/>
           <Route exact path='/:id' render={({ match }) => <Movie id={match.params.id} />}/>
+          <Redirect to={`/${this.state.selectedMovie}`} render={() => <Movie id={this.state.selectedMovie} />}/>
       </div>
     );
   }
