@@ -1,15 +1,31 @@
-import './Navbar.css'
+import './Navbar.css';
 import SearchByNameForm from '../SearchByTitleForm/SearchByTitleForm';
 import { NavLink } from 'react-router-dom';
 
-const Navbar = ({ findMovieByTitle, id }) => {
+const Navbar = ({ findMovieByTitle, resetSelectedMovie }) => {
     return (
-        <nav className='navbar' style={{ display: 'flex', flexDirection: 'row', alignItems: 'baseline', justifyContent: 'space-between', paddingRignt: '20px'}}>
-            <h1>Rancid Tomatillos</h1>
-            <NavLink exact to='/'  
-            className='navbar-home'
-            activeStyle={{ opacity: '0', marginLeft: '20px'}}>Home</NavLink>
-            <SearchByNameForm findMovieByTitle={findMovieByTitle} id={id}/>
+        <nav className='navbar'>
+            <NavLink 
+                to='/' 
+                className='heading'
+                onClick={() => resetSelectedMovie()}
+            >
+                Rancid Tomatillos
+            </NavLink>
+            <NavLink 
+                exact to='/'  
+                className='navbar-home'
+                onClick={() => resetSelectedMovie()}
+                activeStyle={{ opacity: '0'}}
+            >
+                Home
+            </NavLink>
+            {
+                window.location.pathname === '/' &&
+                <SearchByNameForm 
+                    findMovieByTitle={findMovieByTitle}
+                />
+            }
         </nav>
     )
 }

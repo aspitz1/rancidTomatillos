@@ -1,7 +1,6 @@
 import React from 'react'
 import MovieCard from '../Movie-Card/Movie-Card'
 import './All-Movies.css'
-import { NavLink } from 'react-router-dom'
 
 
 const AllMovies = ({movies}) => {
@@ -20,7 +19,7 @@ const AllMovies = ({movies}) => {
     return (
         <div className='movies-container'>
             {moviePosters} 
-      </div>
+        </div>
     )
 }
 
