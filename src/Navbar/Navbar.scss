@@ -21,6 +21,7 @@
     letter-spacing: .1em;
     border: none;
     color: #fff;
+    opacity: 1;
     background-color: $green;
     border-radius: 20px;
     &:disabled,
@@ -31,6 +32,10 @@
     &:hover {
         background-color: #019526;
     }
+}
+
+.navbar-home {
+    text-decoration: none;
 }
 
 .search-by-title-input {

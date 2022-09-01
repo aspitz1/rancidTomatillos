@@ -1,26 +1,34 @@
 import React, { Component } from 'react';
 import '../Navbar/Navbar.css';
+import { Redirect, NavLink } from 'react-router-dom'
 
 class SearchByNameForm extends Component {
-    constructor() {
-        super();
+    constructor(props) {
+        super(props);
         this.state = {
-            movieTitle: ''
+            movieTitle: '',
+            id: this.props.id || ''
         }
+        this.handelMovieTitle = this.handelMovieTitle.bind(this)
+        this.handelSubmit = this.handelSubmit.bind(this)
     }
     
     handelMovieTitle = (event) => {
-        this.setState({ movieTitle: event.target.value });
+        event.preventDefault()
+        this.setState({movieTitle: event.target.value });
+        console.log(this.state.movieTitle)
+        return this.state.movieTitle
     }
     
     resetMovieTitle = () => {
         this.setState({ movieTitle: '' });
     }
 
-    handelSubmit = event => {
-        event.preventDefault();
-        this.props.findMovieByTitle(this.state.movieTitle);
-        this.resetMovieTitle();
+    handelSubmit = (event) => {
+       event.preventDefault()
+        const movie = this.props.findMovieByTitle(this.state.movieTitle);
+       
+        this.setState({id: movie.id})
     }
 
     render() {
@@ -32,15 +40,10 @@ class SearchByNameForm extends Component {
                     value={this.state.movieTitle} 
                     name='movieTitle' 
                     placeholder='Movie Name' 
-                    onChange={(event) => this.handelMovieTitle(event)}
+                    onChange={this.handelMovieTitle}
                 />
-                <input 
-                    className='search-by-title-submit'
-                    type='submit'
-                    value='SEARCH'
-                    disabled={!this.state.movieTitle.length}
-                    onClick={(event => this.handelSubmit(event))}
-                />
+                <NavLink className='search-by-title-submit' to={`/${this.props.id}`} onClick={(event) => this.handelSubmit(event)}
+                >SEARCH</NavLink>
             </form>
         )
     }
