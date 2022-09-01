@@ -27,7 +27,6 @@ class App extends Component {
   findMovieByTitle = (title) => {
     const formattedTitle = this.makeUpperCase(title);
     const movie = this.state.movies.find(movie => movie.title === formattedTitle);
-    console.log(movie)
     this.setState({selectedMovie: movie.id})
     return movie
   }

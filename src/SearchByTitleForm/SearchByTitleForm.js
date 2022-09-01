@@ -44,7 +44,6 @@ class SearchByNameForm extends Component {
                 />
                 <NavLink className='search-by-title-submit' to={`/${this.props.id}`} onClick={(event) => this.handelSubmit(event)}
                 >SEARCH</NavLink>
-
             </form>
         )
     }
