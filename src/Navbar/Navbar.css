@@ -1,11 +1,20 @@
 .navbar {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
   background-color: #14181C;
   margin: 0;
   padding: 0 0 20px 50px;
+  height: 10vh;
+  position: sticky;
+  top: 0;
+  z-index: 2;
 }
-.navbar h1 {
+
+.heading {
+  text-decoration: none;
   margin: 0;
-  padding: 20px 0 8px 0;
+  padding: 20px 0 10px 0;
   font-size: 2.2em;
   letter-spacing: 0.1em;
   color: #fff;
@@ -13,6 +22,7 @@
 
 .navbar-home,
 .search-by-title-submit {
+  margin: 10px 50px 0 0;
   padding: 7px 15px;
   cursor: pointer;
   font-family: sans-serif;
@@ -20,14 +30,10 @@
   letter-spacing: 0.1em;
   border: none;
   color: #fff;
+  opacity: 1;
   background-color: #00BD2E;
   border-radius: 20px;
 }
-
-.navbar-home {
-  text-decoration: none;
-}
-
 .navbar-home:disabled, .navbar-home:disabled:hover,
 .search-by-title-submit:disabled,
 .search-by-title-submit:disabled:hover {
@@ -37,6 +43,17 @@
 .navbar-home:hover,
 .search-by-title-submit:hover {
   background-color: #019526;
+}
+
+.navbar-home {
+  text-decoration: none;
+}
+
+.form-container {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: center;
 }
 
 .search-by-title-input {
