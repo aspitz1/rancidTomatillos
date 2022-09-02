@@ -20,46 +20,16 @@ class Movie extends Component {
             tagline: '',
             averageRating: ''
         },
-         fetchedMovies: [],
          error: ''
         }
     }
 
-    findMovieById = (id) => {
-        return this.state.fetchedMovies.find(movie => movie.id === id);
-    }
-
     viewMovie = (id) => {
-        const movie = this.findMovieById(id);
-        if(movie) {
-        this.setState({
-                ...this.state, 
-                isMovieView: true,
-                error: '',
-                movie: {
-                id: movie.id,
-                title: movie.title,
-                posterPath: movie['poster_path'],
-                backdropPath: movie['backdrop_path'],
-                releaseDate: movie['release_date'],
-                overview: movie.overview,
-                genres: movie.genres,
-                budget: movie.budget,
-                revenue: movie.revenue,
-                runtime: movie.runtime,
-                tagline: movie.tagline,
-                averageRating: movie['average_rating']
-            }})
-        return;
-    }
-
     getMovie(id)
       .then(response => response.json())
       .then(data => {
-        console.log();
         this.setState({...this.state, 
           isMovieView: true,
-          fetchedMovies: [...this.state.fetchedMovies, data.movie],
           error: '',
           movie: {
           id: data.movie.id,
@@ -91,7 +61,6 @@ class Movie extends Component {
     render() {
         return (
             <div>
-            { this.state.error && <p>{this.state.error}</p> }
             { 
                 this.state.error ||
                 <div className='movie-container'>
