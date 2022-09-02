@@ -50,7 +50,6 @@ class Movie extends Component {
                 tagline: movie.tagline,
                 averageRating: movie['average_rating']
             }})
-        this.props.resetError();
         return;
     }
 
@@ -76,7 +75,6 @@ class Movie extends Component {
           tagline: data.movie.tagline,
           averageRating: data.movie['average_rating'].toFixed(1)
         }})
-        this.props.resetError();
       })
       .catch(err =>{
         console.log(err)
