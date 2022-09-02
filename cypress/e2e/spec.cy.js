@@ -14,4 +14,5 @@ describe('/App/App.js', () => {
     cy.wait('@movies')
     expect('movies.length' > 2);
 })
+
 })
