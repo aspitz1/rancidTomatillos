@@ -22,6 +22,10 @@
 .movie-heading-description-container {
   width: 35vw;
 }
+.movie-heading-description-container h2 {
+  color: #00BD2E;
+  font-family: "Tiro Devanagari Hindi", serif;
+}
 
 .movie-heading-details {
   margin: 0;
@@ -51,13 +55,15 @@
 .tagline,
 .description {
   margin: 2vw 0 0 2vw;
-  width: 75%;
+  width: 90%;
+  max-width: 800px;
 }
 
 .tagline {
-  font-size: 1.3em;
+  font-family: "Tiro Devanagari Hindi", serif;
+  font-size: 1.4em;
   font-weight: lighter;
-  color: #fff;
+  color: #00BD2E;
 }
 
 .description {
@@ -73,6 +79,13 @@
   height: 75%;
   margin: 2vw;
   border-radius: 7px;
+}
+
+.error-movie {
+  height: 100vh;
+}
+.error-movie p {
+  font-size: 1.8em;
 }
 
 /*# sourceMappingURL=Movie.css.map */
