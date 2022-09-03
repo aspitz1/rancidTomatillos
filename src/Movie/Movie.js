@@ -62,7 +62,10 @@ class Movie extends Component {
         return (
             <div>
             { 
-                this.state.error ||
+                this.state.error? 
+                <div className='error error-movie'>
+                <p>{this.state.error}</p>
+                </div> :
                 <div className='movie-container'>
                     <div className='movie-heading-container' 
                         style={{
