@@ -2,6 +2,7 @@ import React, { Component } from 'react';
 import Navbar from '../Navbar/Navbar';
 import Movie from '../Movie/Movie';
 import AllMovies from '../All-Movies/All-Movies';
+import PageNotFound from '../PageNotFound'
 import { getAllMovies } from '../api-calls/apiCalls'
 import './App.css';
 import { Route, Switch } from 'react-router-dom';
@@ -59,6 +60,7 @@ class App extends Component {
         <Switch>
           <Route exact path='/' render={() => <AllMovies movies={this.state.movies}/>}/>
           <Route exact path='/:id' render={({ match }) => <Movie id={match.params.id}/>}/>
+          <Route component={PageNotFound} />
         </Switch>
       </div>
     );
