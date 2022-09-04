@@ -3,8 +3,8 @@ import { getMovie } from '../api-calls/apiCalls';
 import './Movie.css'
 
 class Movie extends Component {
-    constructor() {
-        super();
+    constructor(props) {
+        super(props);
             this.state = {
             movie: {
             id: '',
@@ -20,7 +20,8 @@ class Movie extends Component {
             tagline: '',
             averageRating: ''
         },
-         error: ''
+         error: '',
+         location: props.location
         }
     }
 
@@ -54,6 +55,12 @@ class Movie extends Component {
 
     componentDidMount() {
         this.viewMovie(this.props.id)
+    }
+
+    componentDidUpdate() {
+        if (this.state.location !== this.props.location) {
+            this.viewMovie(this.props.location)
+        }
     }
 
     releaseDateFormatted = () => new Date(this.state.movie.releaseDate).toLocaleDateString('en-US');

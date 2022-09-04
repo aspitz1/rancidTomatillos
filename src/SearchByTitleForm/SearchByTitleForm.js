@@ -1,22 +1,25 @@
 import React, { Component } from 'react';
+import { Redirect } from 'react-router-dom';
 import '../Navbar/Navbar.css';
-import { withRouter } from 'react-router';
 
 class SearchByNameForm extends Component {
-    constructor(props) {
-        super(props);
+    constructor() {
+        super();
         this.state = {
             movieTitle: '',
+            movieID: '',
+            submit: false,
             error: ''
         }
     }
+
+    
     
     handelMovieTitle = (event) => {
-        event.preventDefault()
-        this.setState({movieTitle: event.target.value });
+        this.setState({ movieTitle: event.target.value });
     }
     
-    resetMovieTitle = () => {
+    resetForm = () => {
         this.setState({ movieTitle: '' });
     }
 
@@ -24,11 +27,16 @@ class SearchByNameForm extends Component {
         event.preventDefault();
         const id = this.props.findMovieByTitle(this.state.movieTitle);
         if(id) {
-            this.props.history.push('/' + id);
-            this.resetMovieTitle();
+            this.setState({ ...this.state, movieID: id, submit: true })
         } else {
             this.setState({...this.state, error: 'Looks like we can\'t find this title.'})
-            this.resetMovieTitle();
+            this.resetForm();
+        }
+    }
+
+    componentDidUpdate() {
+        if(this.state.submit) {
+            this.setState({ submit: false, movieID: '', error: '', movieTitle: '' })
         }
     }
 
@@ -52,6 +60,7 @@ class SearchByNameForm extends Component {
                         disabled={!this.state.movieTitle}
                         />
                 </form>
+                {this.state.movieID && this.state.submit ? <Redirect push to={'/' + this.state.movieID} /> : null}
                 {
                     this.state.error &&
                     <p 
@@ -67,4 +76,4 @@ class SearchByNameForm extends Component {
     }
 }
 
-export default withRouter(SearchByNameForm);
+export default SearchByNameForm;
