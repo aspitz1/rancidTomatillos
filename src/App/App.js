@@ -13,7 +13,8 @@ class App extends Component {
     this.state = {
       movies: [],
       error: '',
-      selectedMovie: ''
+      selectedMovie: '',
+      location: ''
     }
   }
 
@@ -29,6 +30,7 @@ class App extends Component {
     const formattedTitle = this.makeUpperCase(title);
     const movie = this.state.movies.find(movie => movie.title === formattedTitle);
     if (movie) {
+      this.setState({ ...this.state, location: movie.id })
       return movie.id;
     } else {
       return false;
@@ -47,7 +49,6 @@ class App extends Component {
   }
 
   render() {
-    console.log(this.props);
     return (
       <div className="App">
         <Navbar 
@@ -59,7 +60,7 @@ class App extends Component {
         {this.state.error && <h3 className='error'>{this.state.error}</h3>}
         <Switch>
           <Route exact path='/' render={() => <AllMovies movies={this.state.movies}/>}/>
-          <Route exact path='/:id' render={({ match }) => <Movie id={match.params.id}/>}/>
+          <Route exact path='/:id' render={({ match }) => <Movie id={match.params.id} location={this.state.location}/>}/>
           <Route component={PageNotFound} />
         </Switch>
       </div>
