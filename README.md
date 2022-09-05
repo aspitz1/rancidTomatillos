@@ -1,70 +1,48 @@
-# Getting Started with Create React App
+# Rancid Tomatillos
+ 
+[Deployed Link](https://mayakappen.github.io/rancidtomatillos/)
+ 
+Provides a user interface for searching for and viewing movie details from a collection of movie titles.
+ 
+## Contributors
+* [Anna Spitz](https://github.com/aspitz1)
+* [Maya Kappen](https://github.com/mayakappen)
+ 
+ 
+## Planning Documents
+* [Project Board](https://github.com/users/mayakappen/projects/4/views/1)
+* [Wireframe](https://excalidraw.com/#json=G_f4EIeMLSgnshaDM1FmU,qToM7e4FGMDAfN9qBfZJUw)
+ 
+## Tech Stack
+* React
+* React Router
+* Sass
+* Cypress
+* Webpack
+* Git
+ 
+## Context
+* First completed project from mod 3 at Turing School of Software and Design (Front End 2205)
+* Project was completed within a week and a half among a group of two remote contributors
+* Utilized asynchronous workflow relying on code reviews within pr requests, daily standups, project board tickets, and slack.
+* Learning goals:
+   * Gain familiarity with building module React components
+   * Understand React Router
+   * Make API calls with React
+   * Familiarity with Sass
+   * Write tests with Cypress
+ 
+## Wins/Challenges
+* The limitation placed upon us for this project was to only use class components instead of hooks in order to learn the basic fundamentals of React.
+* This made incorporating React Router especially difficult and we had to find unique solutions to the problems this restriction created.
+* This was also our first project where we used Cypress, and we consider that a big win because of the possibilities and efficiency end-to-end testing enables.
+* We both got more familiar with the React workflow and making components work together.
+* We also really leaned into the asynchronous workflow with this project. We are much more comfortable with the PR and code-review process.
+ 
+## Future Additions (these should be entered as Issues and on your Project Board as well)
+* Support for users to log in and save their favorite movies
+* When the app loads, having the movies organized by genre
+* Improving performance
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
 
-## Available Scripts
-
-In the project directory, you can run:
-
-### `npm start`
-
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in your browser.
-
-The page will reload when you make changes.\
-You may also see any lint errors in the console.
-
-### `npm test`
-
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
-
-### `npm run build`
-
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
-
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
-
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
-
-### `npm run eject`
-
-**Note: this is a one-way operation. Once you `eject`, you can't go back!**
-
-If you aren't satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
-
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you're on your own.
-
-You don't have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn't feel obligated to use this feature. However we understand that this tool wouldn't be useful if you couldn't customize it when you are ready for it.
-
-## Learn More
-
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
-
-To learn React, check out the [React documentation](https://reactjs.org/).
-
-### Code Splitting
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/code-splitting](https://facebook.github.io/create-react-app/docs/code-splitting)
-
-### Analyzing the Bundle Size
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size](https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size)
-
-### Making a Progressive Web App
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app](https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app)
-
-### Advanced Configuration
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/advanced-configuration](https://facebook.github.io/create-react-app/docs/advanced-configuration)
-
-### Deployment
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/deployment](https://facebook.github.io/create-react-app/docs/deployment)
-
-### `npm run build` fails to minify
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify](https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify)
+![Rancid Tomatillos](https://user-images.githubusercontent.com/102932448/188509048-08ac93b8-7f94-483e-a695-c84eabd2f3ab.gif)
