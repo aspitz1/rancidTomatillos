@@ -39,7 +39,7 @@ Provides a user interface for searching for and viewing movie details from a col
 * We both got more familiar with the React workflow and making components work together.
 * We also really leaned into the asynchronous workflow with this project. We are much more comfortable with the PR and code-review process.
  
-## Future Additions (these should be entered as Issues and on your Project Board as well)
+## Future Additions 
 * Support for users to log in and save their favorite movies
 * When the app loads, having the movies organized by genre
 * Improving performance
