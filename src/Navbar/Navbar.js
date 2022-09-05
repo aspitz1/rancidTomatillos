@@ -7,7 +7,7 @@ const Navbar = ({ findMovieByTitle }) => {
         <nav className='navbar'>
             <div>
                 <NavLink 
-                    to='/' 
+                    to='/rancidtomatillos' 
                     className='heading'
                 >
                     Rancid Tomatillos
@@ -15,7 +15,7 @@ const Navbar = ({ findMovieByTitle }) => {
                 <SearchByNameForm findMovieByTitle={findMovieByTitle}/>
             </div>
             <NavLink 
-                exact to='/'  
+                to='/rancidtomatillos'  
                 className='navbar-home'
                 activeStyle={{ opacity: '0'}}
             >
