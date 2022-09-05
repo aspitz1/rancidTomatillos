@@ -59,7 +59,7 @@ class App extends Component {
         />
         {this.state.error && <h3 className='error'>{this.state.error}</h3>}
         <Switch>
-          <Route exact path='/' render={() => <AllMovies movies={this.state.movies}/>}/>
+          <Route path='/rancidtomatillos' render={() => <AllMovies movies={this.state.movies}/>}/>
           <Route exact path='/:id' render={({ match }) => <Movie id={match.params.id} location={this.state.location}/>}/>
           <Route component={PageNotFound} />
         </Switch>
