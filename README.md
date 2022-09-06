@@ -1,6 +1,6 @@
 # Rancid Tomatillos
  
-[Deployed Link](https://mayakappen.github.io/rancidtomatillos/)
+[Deployed Link](https://aspitz1.github.io/rancidtomatillos/)
  
 Provides a user interface for searching for and viewing movie details from a collection of movie titles.
  
